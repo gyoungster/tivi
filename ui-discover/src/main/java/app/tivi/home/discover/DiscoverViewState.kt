@@ -24,6 +24,7 @@ import app.tivi.data.resultentities.RecommendedEntryWithShow
 import app.tivi.data.resultentities.TrendingEntryWithShow
 import app.tivi.trakt.TraktAuthState
 
+/** 标注为 不可变的，相当于变量的val */
 @Immutable
 internal data class DiscoverViewState(
     val user: TraktUser? = null,

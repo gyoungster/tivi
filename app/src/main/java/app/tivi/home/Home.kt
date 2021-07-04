@@ -63,15 +63,17 @@ internal fun Home(
 
     Scaffold(
         bottomBar = {
+            /** currentScreenAsState 自定义的扩展函数*/
             val currentSelectedItem by navController.currentScreenAsState()
 
             HomeBottomNavigation(
                 selectedNavigation = currentSelectedItem,
                 onNavigationSelected = { selected ->
                     navController.navigate(selected.route) {
+                        /** 这些变量是 Nav 的*/
                         launchSingleTop = true
                         restoreState = true
-
+                        /**nav 弹出所有不是目的地的*/
                         popUpTo(navController.graph.findStartDestination().id) {
                             saveState = true
                         }
@@ -187,6 +189,7 @@ private fun RowScope.HomeBottomNavigationItem(
     BottomNavigationItem(
         icon = {
             if (selectedPainter != null) {
+                /**Crossfade 带淡入淡出动画*/
                 Crossfade(targetState = selected) { selected ->
                     Icon(
                         painter = if (selected) selectedPainter else painter,

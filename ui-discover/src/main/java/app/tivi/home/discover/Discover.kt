@@ -349,6 +349,7 @@ private fun Header(
         Spacer(Modifier.weight(1f))
 
         AnimatedVisibility(visible = loading) {
+            /** progressbar */
             AutoSizedCircularProgressIndicator(
                 color = MaterialTheme.colors.secondary,
                 modifier = Modifier

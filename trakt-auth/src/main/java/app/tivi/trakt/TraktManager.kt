@@ -34,6 +34,12 @@ import javax.inject.Inject
 import javax.inject.Named
 import javax.inject.Singleton
 
+/**
+ * OptIn 实验性的，不稳定的
+ * DelicateCoroutinesApi 定义的一种注解，提示要小心使用，和协程有关
+ *
+ * 自己的类加上这个注解，告诉编译器 我知道这个api有风险，我自己承担
+ * **/
 @OptIn(DelicateCoroutinesApi::class)
 @Singleton
 class TraktManager @Inject constructor(
